@@ -41,24 +41,24 @@ image::https://www.gliffy.com/go/view/9804461.png?size=large[]
 CREATE (:Database {name:'Neo4j'})-[:SUPPORTS]->(:Language {name:'Cypher'})
 
 CREATE (FuentesDeInvierno:Station {name:'fuentes de invierno', numberOfSlopes:15, numremontes:5})
-CREATE (Abedules:Slope {name:'Abedules', dificutad:'Rojo'})
-CREATE (Brezales:Slope {name:'Brezales', dificutad:'Azul'})
-CREATE (PequenioLaurel:Slope {name:'Pequeño laurel', dificutad:'Verde'})
-CREATE (Toneos:Slope {name:'Toneo', dificutad:'Verde'})
-CREATE (LaHolla:Slope {name:'La Hoya', dificutad:'Rojo'})
-CREATE (Rebecos:Slope {name:'Rebecos', dificutad:'Negro'})
+CREATE (Abedules:Slope {name:'Abedules', difficulty:'Red'})
+CREATE (Brezales:Slope {name:'Brezales', difficulty:'Blue'})
+CREATE (PequenioLaurel:Slope {name:'Pequeño laurel', difficulty:'Green'})
+CREATE (Toneos:Slope {name:'Toneo', difficulty:'Green'})
+CREATE (LaHolla:Slope {name:'La Hoya', difficulty:'Red'})
+CREATE (Rebecos:Slope {name:'Rebecos', difficulty:'Black'})
 
 CREATE (SanIsidro:Station {name:'San Isidro', numberOfSlopes:31, numremontes:15})
-CREATE (LosPiornos:Slope {name:'Los Piornos', dificutad:'Azul'})
-CREATE (LaPerdiz:Slope {name:'La Perdiz', dificutad:'Rojo'})
-CREATE (LaTortuga:Slope {name:'La tortuga', dificutad:'Azul'})
-CREATE (GranCanion:Slope {name:'Gran Cañón', dificutad:'Roja'})
-CREATE (LaCollada:Slope {name:'La Collada', dificutad:'Negro'})
-CREATE (laTravesia:Slope {name:'La Travesía', dificutad:'Azul'})
-CREATE (laSolana:Slope {name:'La Solana', dificutad:'Negro'})
+CREATE (LosPiornos:Slope {name:'Los Piornos', difficulty:'Blue'})
+CREATE (LaPerdiz:Slope {name:'La Perdiz', difficulty:'Red'})
+CREATE (LaTortuga:Slope {name:'La tortuga', difficulty:'Blue'})
+CREATE (GranCanion:Slope {name:'Gran Cañón', difficulty:'Red'})
+CREATE (LaCollada:Slope {name:'La Collada', difficulty:'Black'})
+CREATE (laTravesia:Slope {name:'La Travesía', difficulty:'Blue'})
+CREATE (laSolana:Slope {name:'La Solana', difficulty:'Black'})
 
 CREATE (Manzaneda:Station {name:'Manzaneda', numberOfSlopes:25, numremontes:5})
-CREATE (eixo:Slope {name:'Xeixo', dificutad:'Verde'})
+CREATE (eixo:Slope {name:'Xeixo', difficulty:'Green'})
 CREATE (Baqueira:Station {name:'Baqueira Beret', numberOfSlopes:100, numremontes:55})
 CREATE (Cerler:Station {name:'Cerler', numberOfSlopes:68, numremontes:19})
 CREATE (Formigal:Station {name:'Formigal', numberOfSlopes:147, numremontes:37})
@@ -241,7 +241,7 @@ return p
 start Catalunya = node(47)
 match (i:Slope)<-[:SKIED_IN{modalidad:'Snow'}]-(p1:Person)-[:LIKES]->(p2:Person), (s:Station)
 where p2.name="John Fitzgerald Kennedy" and not(i-[:BELONGS_TO]->s-[:LOCATED_IN*..]->(Catalunya)) 
-return i
+return distinct i
 ----
 //table
 * about it
