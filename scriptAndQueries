@@ -23,7 +23,7 @@ image::http://farm2.staticflickr.com/1461/24362514472_16478da150_b.jpg[]
 
 * instance model: 
 
-image::https://www.gliffy.com/go/view/9804461.png?size=large[]
+image::https://www.gliffy.com/go/view/9804461.png[]
 
 * features:
 ** number of nodes: 46
@@ -229,7 +229,7 @@ return p2
 ----
 start person=node(35) 
 match (p:Person)-[:KNOWN]->person-[:SKIED_IN]->(p1:Slope)-[:BELONGS_TO]->(s:Station)<-[:BELONGS_TO]-(Slope)<-[:SKIED_IN]-p 
-return p
+return distinct p
 ----
 //table
 
