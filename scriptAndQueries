@@ -1,5 +1,5 @@
-= *Winter network*
-image::http://farm2.staticflickr.com/1461/24362514472_16478da150_b.jpg[]
+= Winter network
+== image::http://farm2.staticflickr.com/1461/24362514472_16478da150_b.jpg[]
 * Description:
 	This is a social network aimed at people who practice outdoors winter sports such as skiing
 	or snowboarding. Users can indicate that station have skied and that mode, leave a comments
@@ -33,6 +33,7 @@ image::https://www.gliffy.com/go/view/9804461.png[]
 
 //console
 
+* _Creation script:_
 //hide
 //setup
 //output
