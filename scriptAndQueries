@@ -43,7 +43,7 @@ CREATE (:Database {name:'Neo4j'})-[:SUPPORTS]->(:Language {name:'Cypher'})
 CREATE (FuentesDeInvierno:Station {name:'fuentes de invierno', numberOfSlopes:15, numremontes:5})
 CREATE (Abedules:Slope {name:'Abedules', dificutad:'Rojo'})
 CREATE (Brezales:Slope {name:'Brezales', dificutad:'Azul'})
-CREATE (PequenioLaurel:Slope {name:'PequeÒo laurel', dificutad:'Verde'})
+CREATE (PequenioLaurel:Slope {name:'Peque√±o laurel', dificutad:'Verde'})
 CREATE (Toneos:Slope {name:'Toneo', dificutad:'Verde'})
 CREATE (LaHolla:Slope {name:'La Hoya', dificutad:'Rojo'})
 CREATE (Rebecos:Slope {name:'Rebecos', dificutad:'Negro'})
@@ -52,9 +52,9 @@ CREATE (SanIsidro:Station {name:'San Isidro', numberOfSlopes:31, numremontes:15}
 CREATE (LosPiornos:Slope {name:'Los Piornos', dificutad:'Azul'})
 CREATE (LaPerdiz:Slope {name:'La Perdiz', dificutad:'Rojo'})
 CREATE (LaTortuga:Slope {name:'La tortuga', dificutad:'Azul'})
-CREATE (GranCanion:Slope {name:'Gran CaÒÛn', dificutad:'Roja'})
+CREATE (GranCanion:Slope {name:'Gran Ca√±√≥n', dificutad:'Roja'})
 CREATE (LaCollada:Slope {name:'La Collada', dificutad:'Negro'})
-CREATE (laTravesia:Slope {name:'La TravesÌa', dificutad:'Azul'})
+CREATE (laTravesia:Slope {name:'La Traves√≠a', dificutad:'Azul'})
 CREATE (laSolana:Slope {name:'La Solana', dificutad:'Negro'})
 
 CREATE (Manzaneda:Station {name:'Manzaneda', numberOfSlopes:25, numremontes:5})
@@ -63,9 +63,9 @@ CREATE (Baqueira:Station {name:'Baqueira Beret', numberOfSlopes:100, numremontes
 CREATE (Cerler:Station {name:'Cerler', numberOfSlopes:68, numremontes:19})
 CREATE (Formigal:Station {name:'Formigal', numberOfSlopes:147, numremontes:37})
 
-CREATE (Cantabrica:Place {name:'Cordilera Cant·brica'})
-CREATE (Catalan:Place {name:'Pirineo Catal·n'})
-CREATE (Aragones:Place {name:'Pirineo AragonÈs'})
+CREATE (Cantabrica:Place {name:'Cordilera Cant√°brica'})
+CREATE (Catalan:Place {name:'Pirineo Catal√°n'})
+CREATE (Aragones:Place {name:'Pirineo Aragon√©s'})
 
 CREATE
   (FuentesDeInvierno)-[:LOCATED_IN]->(Cantabrica),
@@ -97,7 +97,7 @@ CREATE (Tesla:Person {name:'Nikola Tesla', born:1856})
 CREATE (Chaplin:Person {name:'Charles Spencer Chaplin', born:1889})
 CREATE (SteveJobs:Person {name:'Steven Paul Jobs', born:1955})
 CREATE (BillGates:Person {name:'William Henry Gates', born:1955})
-CREATE (DalÌ:Person {name:'Salvador Felipe Jacinto DalÌ', born:1904})
+CREATE (Dal√≠:Person {name:'Salvador Felipe Jacinto Dal√≠', born:1904})
 CREATE (Faraday:Person {name:'Michael Faraday', born:1791})
 CREATE (Turing:Person {name:'Alan Mathison Turing', born:1912})
 CREATE (Edwar:Person {name:'Edward Snowden', born:1983})
@@ -105,20 +105,20 @@ CREATE (Edwar:Person {name:'Edward Snowden', born:1983})
 CREATE
   //(Marilyn)-[:SKIED_IN {modalidad:'Snow', rating:10, coment:'this slope is the best!!'}]->(laSolana),
   (Marilyn)-[:SKIED_IN {modalidad:'Snow'}]->(laSolana),
-  (Marilyn)-[:SKIED_IN {modalidad:'EsquÌ'}]->(Formigal),
-  (Kennedy)-[:SKIED_IN {modalidad:'EsquÌ'}]->(eixo),
-  (Tesla)-[:SKIED_IN {modalidad:'EsquÌ'}]->(GranCanion),
-  (Tesla)-[:SKIED_IN {modalidad:'EsquÌ'}]->(LaCollada),
-  (Tesla)-[:SKIED_IN {modalidad:'EsquÌ'}]->(laSolana),
+  (Marilyn)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(Formigal),
+  (Kennedy)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(eixo),
+  (Tesla)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(GranCanion),
+  (Tesla)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(LaCollada),
+  (Tesla)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(laSolana),
   (Tesla)-[:SKIED_IN {modalidad:'Snow'}]->(Cerler),
-  (SteveJobs)-[:SKIED_IN {modalidad:'EsquÌ'}]->(Abedules),
-  (Edwar)-[:SKIED_IN {modalidad:'EsquÌ'}]->(LaTortuga),
-  (SteveJobs)-[:SKIED_IN {modalidad:'EsquÌ'}]->(Baqueira),
-  (BillGates)-[:SKIED_IN {modalidad:'EsquÌ'}]->(Baqueira),
-  (Faraday)-[:SKIED_IN {modalidad:'EsquÌ'}]->(Manzaneda),
+  (SteveJobs)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(Abedules),
+  (Edwar)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(LaTortuga),
+  (SteveJobs)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(Baqueira),
+  (BillGates)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(Baqueira),
+  (Faraday)-[:SKIED_IN {modalidad:'Esqu√≠'}]->(Manzaneda),
   (Turing)-[:SKIED_IN {modalidad:'Snow'}]->(Rebecos)
 
- CREATE (LosAngeles:Place {name:'Los ¡ngeles'})
+ CREATE (LosAngeles:Place {name:'Los √Ångeles'})
  CREATE (California:Place {name:'California'})
  CREATE (EstadosUnidos:Place {name:'United States'})
  CREATE (Brookline:Place {name:'Brookline'})
@@ -128,9 +128,9 @@ CREATE
  CREATE (Inglaterra:Place {name:'Inglaterra'})
  CREATE (SanFrancisco:Place {name:'San Francisco'})
  CREATE (Asturias:Place {name:'Asturias'})
- CREATE (Leon:Place {name:'Castilla LeÛn'})
+ CREATE (Leon:Place {name:'Castilla Le√≥n'})
  CREATE (Catalunia:Place {name:'Catalunya'})
- CREATE (Espania:Place {name:'EspaÒa'})
+ CREATE (Espania:Place {name:'Espa√±a'})
  CREATE (Seattle:Place {name:'Seattle'})
  CREATE (Washington:Place {name:'Washington'})
 
