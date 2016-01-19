@@ -238,9 +238,9 @@ return p
 //output
 [source,cypher]
 ----
-start Catalunya = node(45)
+start Catalunya = node(47)
 match (i:Slope)<-[:SKIED_IN{modalidad:'Snow'}]-(p1:Person)-[:LIKES]->(p2:Person), (s:Station)
-where p2.name="Norma Jean Baker Mortenson" and not(i-[:BELONGS_TO]->s-[:LOCATED_IN*..]->(Catalunya)) 
+where p2.name="John Fitzgerald Kennedy" and not(i-[:BELONGS_TO]->s-[:LOCATED_IN*..]->(Catalunya)) 
 return i
 ----
 //table
