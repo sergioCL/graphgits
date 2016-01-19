@@ -170,67 +170,76 @@ CREATE
   (Faraday)-[:KNOWN]->(Edwar),
   (BillGates)-[:KNOWN]->(Edwar),
   (Tesla)-[:KNOWN]->(Edwar),
-  (Marilyn)-[:LOVE]->(Kennedy),
-  (Bobby)-[:HATES]->(Marilyn),
-  (Tesla)-[:LOVE]->( Marilyn),
-  (Chaplin)-[:LOVE]->( Marilyn),
-  (Faraday)-[:LOVE]->( Marilyn)
+  (Marilyn)-[:LIKES]->(Kennedy),
+  (Bobby)-[:DISLIKES]->(Marilyn),
+  (Tesla)-[:LIKES]->( Marilyn),
+  (Chaplin)-[:LIKES]->( Marilyn),
+  (Faraday)-[:LIKES]->( Marilyn)
 
 RETURN FuentesDeInvierno
 ;
 ----
+*Use Cases
 
+** _get all the people who have skied the track called "La Solana":_
 //setup
 //output
 [source,cypher]
 ----
-match (p:Person)-[:SKIED_IN ]->(i:Slope)where i.name = "La Solana" 
-return p
+MATCH (p:Person)-[:SKIED_IN ]->(i:Slope)where i.name = "La Solana" 
+RETURN p
 ----
 //graph_result
 
+** _Total number of persons:_
 //setup
 //output
 [source,cypher]
 ----
-match (p:Person) return count(*)
+MATCH (p:Person) 
+RETURN count(*)
 ----
 //table
 
+** _Get the name of all people born in the United States, and the name of the first place node to which they belong:_
 //setup
 //output
 [source,cypher]
 ----
-match (p:Person)-[:BORN_IN]->(l1:Place)-[:LOCATED_IN *0..]->(l2:Place)where l2.name="United States" 
-return p.name, l1.name
+MATCH (p:Person)-[:BORN_IN]->(l1:Place)-[:LOCATED_IN *0..]->(l2:Place)where l2.name="United States" 
+RETURN p.name, l1.name 
+ORDER BY p.name
 ----
 //table
 
+** _People who are liked by 3 or more people:_
 //setup
 //output
 [source,cypher]
 ----
-match(Person)-[:LOVE]->(p2:Person) WITH count(*) as c,p2 where c>2  
+match(Person)-[:LIKES]->(p2:Person) WITH count(*) as c,p2 where c>=3  
 return p2
 ----
 //graph_result
 
+** _get the knowns to a person who skied on a track in the same station where the person skied:_
 //setup
 //output
 [source,cypher]
 ----
-start person=node(33) 
+start person=node(35) 
 match (p:Person)-[:KNOWN]->person-[:SKIED_IN]->(p1:Slope)-[:BELONGS_TO]->(s:Station)<-[:BELONGS_TO]-(Slope)<-[:SKIED_IN]-p 
 return p
 ----
 //table
 
+** _Name of the slopes where a person who likes x person snowboarding  and the slope is not in in Catalonia:_
 //setup
 //output
 [source,cypher]
 ----
 start Catalunya = node(45)
-match (i:Slope)<-[:SKIED_IN{modalidad:'Snow'}]-(p1:Person)-[:LOVE]->(p2:Person), (s:Station)
+match (i:Slope)<-[:SKIED_IN{modalidad:'Snow'}]-(p1:Person)-[:LIKES]->(p2:Person), (s:Station)
 where p2.name="Norma Jean Baker Mortenson" and not(i-[:BELONGS_TO]->s-[:LOCATED_IN*..]->(Catalunya)) 
 return i
 ----
