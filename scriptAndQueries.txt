@@ -233,7 +233,7 @@ return p
 ----
 //table
 
-** _Name of the slopes where a person who likes x person snowboarding  and the slope is not in in Catalonia:_
+** _The slopes where a person who likes x person snowboarding  and the slope is not in in Catalonia:_
 //setup
 //output
 [source,cypher]
